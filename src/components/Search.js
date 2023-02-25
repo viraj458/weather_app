@@ -36,11 +36,13 @@ const Search = ({setData}) => {
             onChange={event => setLatitude(event.target.value)}
             placeholder='Enter Latitude'
             type="number" />
+
             <input
             value={longitude}
             onChange={event => setLongitude(event.target.value)}
             placeholder='Enter Longitude'
             type="number" />
+            
             <button onClick={handleSearch}>Search</button>
         </div>
     </div>
