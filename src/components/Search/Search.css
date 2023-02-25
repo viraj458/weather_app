@@ -1,0 +1,37 @@
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 50px;
+  }
+
+::placeholder {
+    color: #f8f8f8;
+}
+
+input {
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid rgba(255,255,255, 0.8);
+    background: rgba(255,255,255, 0.1);
+    color: #f8f8f8;
+  }
+
+input.s1{
+  width: 120px;
+  border-radius: 10px 0 0 10px;
+}
+input.s2{
+  width: 120px;
+}
+
+.shicon{
+  width: 29px;
+  height: 29px;
+  padding: 7px;
+  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+  cursor: pointer;
+  border-radius:  0 10px 10px 0;
+}
