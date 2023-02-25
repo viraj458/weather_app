@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-import Home from './components/Home';
-import Search from './components/Search';
-import WeekCard from './components/WeekCard';
+import Home from './components/Home/Home';
+import Search from './components/Search/Search';
+import WeekCard from './components/WeekCard/WeekCard';
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
  
   useEffect(()=>{
     const fetchData = async() => {
-      await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=6.927079&lon=79.861244&units=metric&appid=f0fe2f7bb81e52b365adc3d4c1738af7`)
+      await fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=6.927079&lon=79.861244&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
       .then(res=>{
         if(!res.ok) throw Error(res.statusText)
         return res.json()
@@ -42,29 +42,31 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div className="app">
       
       {/* Search component */}
       <Search setData={setData}/>
+      <div className='container'>
+        {/* Home component */}
+        {shHome &&
+        <>
+          <Home 
+          data={data}
+          more={more}
+          />
+        </>}
 
-      {/* Home component */}
-      {shHome &&
-      <>
-        <Home 
-        data={data}
-        more={more}
-        />
-      </>}
 
-
-      {/* WeekCard component */}
-      { shCard &&
-      <>
-        <WeekCard 
-        data={data} 
-        back={back}
-        /> 
-      </>}
+        {/* WeekCard component */}
+        { shCard &&
+        <>
+          <WeekCard 
+          data={data} 
+          back={back}
+          /> 
+        </>}
+      </div>
+      
       
     </div>
   );
