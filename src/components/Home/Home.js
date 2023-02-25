@@ -13,7 +13,7 @@ const Home = ({data, more}) => {
 
       {/* shows current day temp in celcius */}
       <div className='today'>
-      {data.list ? <><h1>{data.list[0].main.temp.toFixed()}°C</h1><p>{data.list[0].dt_txt.split(' ')[0]}</p></> : null}
+      {data.list ? <><h1>{data.list[0].main.temp.toFixed()}°C</h1><p>Today</p></> : null}
       </div>
     
       {/* shows next 3 days temp in celcius */}
